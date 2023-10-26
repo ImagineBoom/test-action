@@ -38,8 +38,22 @@ jobs:
     name: handle-pubspec
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      # 检出代码到工作目录，直接进入项目的一级目录
+      - id: step1
+        name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - id: step2
+        name: Update pubspec.yaml
+        run: |
           ls
           pwd
           version=${{ needs.release-please.outputs.version }}
           sed -i "s/version: .*/version: ${version}/" pubspec.yaml
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "imagineboom"
+          git config --global user.email "imagineboom@foxmail.com"
+          git add pubspec.yaml
+          git commit -m "build: update version in pubspec.yaml"
+          git push
