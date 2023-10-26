@@ -23,25 +23,23 @@ jobs:
         with:
           release-type: node
           package-name: release-please-action
-
+      # 检出代码到工作目录，直接进入项目的一级目录
       - id: step2
         name: Checkout Repository
-        uses: actions/checkout@v2  # 检出代码到工作目录
+        uses: actions/checkout@v2
 
       - id: step3
         run: |
-          ls
-          pwd
           sudo apt-get update -y && sudo apt-get install jq -y
           version=$(jq -r '.version' package.json)
           echo "version=${version}" >> $GITHUB_OUTPUT
-          echo "version=${version}"
   handle-pubspec:
     needs: release-please
     name: handle-pubspec
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo pwd=$PWD
+          ls
+          pwd
           version=${{ needs.release-please.outputs.version }}
           sed -i "s/version: .*/version: ${version}/" pubspec.yaml
