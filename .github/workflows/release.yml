@@ -25,6 +25,7 @@ jobs:
           package-name: release-please-action
       - id: step2
         run: |
+          sudo apt-get update -y && sudo apt-get install jq -y
           version=$(echo "$json_data" | jq -r '.version')
           echo "version=${version}" >> $GITHUB_OUTPUT
           echo "version=${version}"
@@ -34,6 +35,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          version=${{ needs.release-please.outputs.version }}
           echo pwd=$PWD
+          version=${{ needs.release-please.outputs.version }}
           sed -i "s/version: .*/version: ${version}/" pubspec.yaml
