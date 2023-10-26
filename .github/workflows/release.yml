@@ -27,11 +27,13 @@ jobs:
         run: |
           version=$(echo "$json_data" | jq -r '.version')
           echo "version=${version}" >> $GITHUB_OUTPUT
+          echo "version=${version}"
   handle-pubspec:
     needs: release-please
-    name: step3
+    name: handle-pubspec
     runs-on: ubuntu-latest
     steps:
       - run: |
           version=${{ needs.release-please.outputs.version }}
+          echo pwd=$PWD
           sed -i "s/version: .*/version: ${version}/" pubspec.yaml
