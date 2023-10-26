@@ -25,6 +25,7 @@ jobs:
           package-name: release-please-action
       - id: step2
         run: |
+          ls
           pwd
           sudo apt-get update -y && sudo apt-get install jq -y
           version=$(jq -r '.version' package.json)
