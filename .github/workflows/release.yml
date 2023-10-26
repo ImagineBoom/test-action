@@ -18,16 +18,20 @@ jobs:
     outputs:
       version: ${{ steps.step3.outputs.version }}
     steps:
-      - id: step1
-        uses: google-github-actions/release-please-action@v3
-        with:
-          release-type: node
-          package-name: release-please-action
       # 检出代码到工作目录，直接进入项目的一级目录
-      - id: step2
+      - id: step1
         name: Checkout Repository
         uses: actions/checkout@v2
 
+      - id: step2
+        uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: simple
+          package-name: release-please-action
+      - run: |
+          echo "cat version.txt"
+          ls
+          cat version.txt
       - id: step3
         run: |
           sudo apt-get update -y && sudo apt-get install jq -y
