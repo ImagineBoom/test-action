@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/ImagineBoom/test-action/compare/v1.2.0...v1.3.0) (2023-10-27)
+
+
+### Features
+
+* update7 ([80b1caa](https://github.com/ImagineBoom/test-action/commit/80b1caa7d4f65b20128b3c10ddb969e1a3405c55))
+* update8 ([0cd7b3c](https://github.com/ImagineBoom/test-action/commit/0cd7b3c740c90089375ed33600a4cb48fddc0dfc))
+
 ## [1.2.0](https://github.com/ImagineBoom/test-action/compare/v1.1.0...v1.2.0) (2023-10-26)
 
 
