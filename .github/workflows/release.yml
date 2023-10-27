@@ -42,5 +42,6 @@ jobs:
           # architecture: arm64
       - run: flutter doctor
       - run: flutter config --enable-macos-desktop
+      - run: npm install
       - run: make build-client-macOS
       - run: gh release upload ${{ needs.release-please.outputs.tag }} ./packaging/dmg/untitled2_arm64.dmg TAG=${{ needs.release-please.outputs.tag }}
