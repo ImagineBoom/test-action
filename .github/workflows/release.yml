@@ -15,20 +15,31 @@ jobs:
   release-please:
     name: version-changelog
     runs-on: ubuntu-latest
-    # outputs:
-    #   version: ${{ steps.step3.outputs.version }}
+    outputs:
+        tag: ${{ steps.release.outputs.tag_name }}
     steps:
-      # 检出代码到工作目录，直接进入项目的一级目录
-      - id: step1
-        name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - id: step2
+      - id: release
         uses: google-github-actions/release-please-action@v3
         with:
           release-type: dart
           package-name: release-please-action
-      # - run: |
+  publish_flutter_arm64_macos:
+    needs: release-please
+    name: publish_flutter_arm64_macos
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          architecture: arm64
+      - run: |
+          flutter config --enable-macos-desktop
+          make build-client-macOS
+          gh release upload ${{ needs.release-please.outputs.tag }} ./packaging/dmg/untitled2_arm64.dmg TAG=${{ needs.release-please.outputs.tag }}
+      # 搭建flutter环境
+      # - id: step3
+      #   run: |
       #     echo "cat version.txt"
       #     ls
       #     cat version.txt

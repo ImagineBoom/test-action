@@ -1,0 +1,28 @@
+display_name: BoxInspector
+package_name: BoxInspector
+maintainer:
+  name: ImagineBoom
+  email: imagineboom@foxmail.com
+
+priority: optional
+section: x11
+installed_size: 6604
+essential: false
+icon: assets/images/box-icon2.png
+
+postinstall_scripts:
+  - echo "Installed awesome app"
+postuninstall_scripts:
+  - echo "Surprised Pickachu face"
+
+keywords:
+  - Box
+  - Box Inspector
+  - Application
+
+generic_name: Tech Application
+
+categories:
+  - Tech
+
+startup_notify: true
