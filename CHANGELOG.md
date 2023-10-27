@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/ImagineBoom/test-action/compare/v1.7.0...v1.8.0) (2023-10-27)
+
+
+### Features
+
+* f2 ([283f14a](https://github.com/ImagineBoom/test-action/commit/283f14a5c237b63c9fa05c785d3c32e42a8b9f80))
+
 ## [1.7.0](https://github.com/ImagineBoom/test-action/compare/v1.6.0...v1.7.0) (2023-10-27)
 
 
