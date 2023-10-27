@@ -46,7 +46,7 @@ jobs:
           cache-path: '${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:' # optional, change this to specify the cache path
       # - run: flutter doctor
       - run: ls
-      - run: rm ./packaging/dmg/*.dmg
+      - run: rm -rf ./packaging/dmg/*.dmg
       - run: rm -rf ./node_modules
       - run: npm -v
       - run: npm install
@@ -83,7 +83,7 @@ jobs:
           cache-path: '${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:' # optional, change this to specify the cache path
       # - run: flutter doctor
       - run: ls
-      - run: rm ./packaging/deb/*.deb
+      - run: rm -rf ./packaging/deb/*.deb
       - run: flutter config --enable-linux-desktop
       - run: make build-client-ubuntu-x64 PRJ_NAME=${{ env.PRJ_NAME }} TAG=${{ env.TAG }}
       - env:
