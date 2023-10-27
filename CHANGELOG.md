@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.6.0](https://github.com/ImagineBoom/test-action/compare/v1.5.0...v1.6.0) (2023-10-27)
+
+
+### Features
+
+* **ci pub:** ci ([f07499d](https://github.com/ImagineBoom/test-action/commit/f07499d45228d2dce92749e5394291c9fb3ba344))
+* getv ([fb1d7b3](https://github.com/ImagineBoom/test-action/commit/fb1d7b345466883d21e6bb0de98d8cd3cf51d06b))
+* **t:** t ([3fd6cad](https://github.com/ImagineBoom/test-action/commit/3fd6cad11108357c614564a02ffd96e3aad1354b))
+
 ## [1.5.0](https://github.com/ImagineBoom/test-action/compare/v1.4.0...v1.5.0) (2023-10-27)
 
 
