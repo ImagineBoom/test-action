@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.27.0](https://github.com/ImagineBoom/test-action/compare/v1.26.0...v1.27.0) (2023-10-27)
+
+
+### Features
+
+* aa ([24bf410](https://github.com/ImagineBoom/test-action/commit/24bf4108d52e63f68f8539d9207784cb6186609d))
+* bb ([e435667](https://github.com/ImagineBoom/test-action/commit/e4356679ea2add2d61b5ea8c1215ac525e98c6c4))
+
 ## [1.26.0](https://github.com/ImagineBoom/test-action/compare/v1.25.0...v1.26.0) (2023-10-27)
 
 
