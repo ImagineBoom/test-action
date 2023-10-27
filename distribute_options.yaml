@@ -1,0 +1,14 @@
+output: packaging/deb/
+releases:
+  - name: dev
+    jobs:
+      # Build and publish your apk pkg to pgyer
+      - name: release-dev-android
+        package:
+          platform: android
+          target: apk
+          build_args:
+            flavor: dev
+            target-platform: android-arm,android-arm64
+            dart-define:
+              APP_ENV: dev
