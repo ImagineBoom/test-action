@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/ImagineBoom/test-action/compare/v1.6.0...v1.7.0) (2023-10-27)
+
+
+### Features
+
+* tt ([cd6daa6](https://github.com/ImagineBoom/test-action/commit/cd6daa625e89566a85d617318304244abaab8ce8))
+
 ## [1.6.0](https://github.com/ImagineBoom/test-action/compare/v1.5.0...v1.6.0) (2023-10-27)
 
 
