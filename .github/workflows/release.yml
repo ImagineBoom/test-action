@@ -40,7 +40,12 @@ jobs:
           channel: 'stable'
           # flutter-version: ${{ env.flutter_version }}
           # architecture: arm64
-      - run: flutter doctor
+      # - run: flutter doctor
+      - run: ls
+      - run: rm -rf ./node_modules
+      - run: npm -v
+      - run: npx -v
+      - run: npm install
       - run: flutter config --enable-macos-desktop
       - run: npm install
       - run: make build-client-macOS
