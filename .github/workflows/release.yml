@@ -35,6 +35,7 @@ jobs:
       PRJ_NAME: "BoxInspector"
     runs-on: macos-latest
     steps:
+      - uses: actions/checkout@v4
       - id: flutter-action
         uses: subosito/flutter-action@v2
         with:
