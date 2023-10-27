@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.26.0](https://github.com/ImagineBoom/test-action/compare/v1.25.0...v1.26.0) (2023-10-27)
+
+
+### Features
+
+* v ([f969bfa](https://github.com/ImagineBoom/test-action/commit/f969bfac72d19fa15fcbe5903374fc1a226e9d15))
+
 ## [1.25.0](https://github.com/ImagineBoom/test-action/compare/v1.24.0...v1.25.0) (2023-10-27)
 
 
