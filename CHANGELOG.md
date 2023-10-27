@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/ImagineBoom/test-action/compare/v1.8.0...v1.9.0) (2023-10-27)
+
+
+### Features
+
+* test ([a575366](https://github.com/ImagineBoom/test-action/commit/a5753663dac434baf83a75ea5bbe1811c1d6ea8e))
+
 ## [1.8.0](https://github.com/ImagineBoom/test-action/compare/v1.7.0...v1.8.0) (2023-10-27)
 
 
