@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-
+PRJ_NAME ?=
 TAG ?=
 
 clean-client:
@@ -40,10 +40,10 @@ build-client-linux-amd64: flutter_distributor
 	flutter_distributor package --platform linux --targets deb --no-skip-clean
 
 # 编译到 macOS
-build-client-macOS:
+build-client-macOS-x64:
 	@ - make clean-client
 	flutter build macos
-	npx appdmg ./packaging/dmg/config.json packaging/dmg/untitled2_$(TAG)-arm64.dmg
+	npx appdmg ./packaging/dmg/config.json packaging/dmg/$(PRJ_NAME)-$(TAG)-x64.dmg
 
 # 编译到 windows
 build-client-windows-amd64:
