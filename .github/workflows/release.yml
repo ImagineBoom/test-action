@@ -26,20 +26,17 @@ jobs:
       - if: ${{ steps.release.outputs.release_created }}
         run: echo tag=${{ steps.release.outputs.tag_name }}
   publish_flutter_arm64_macos:
+    if: ${{ needs.release-please.outputs.tag }}
     needs: release-please
     name: publish_flutter_arm64_macos
     runs-on: macos-latest
     steps:
-      - if: ${{ needs.release-please.outputs.tag }}
-        uses: actions/checkout@v3
-      - if: ${{ needs.release-please.outputs.tag }}
-        uses: subosito/flutter-action@v2
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
           architecture: arm64
-      - if: ${{ needs.release-please.outputs.tag }}
-        run:
-          flutter doctor
-          flutter config --enable-macos-desktop
-          make build-client-macOS
-          gh release upload ${{ needs.release-please.outputs.tag }} ./packaging/dmg/untitled2_arm64.dmg TAG=${{ needs.release-please.outputs.tag }}
+      - run: flutter doctor
+      - run: flutter config --enable-macos-desktop
+      - run: make build-client-macOS
+      - run: gh release upload ${{ needs.release-please.outputs.tag }} ./packaging/dmg/untitled2_arm64.dmg TAG=${{ needs.release-please.outputs.tag }}
