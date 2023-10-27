@@ -46,7 +46,6 @@ jobs:
           cache-path: '${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:' # optional, change this to specify the cache path
       # - run: flutter doctor
       - run: ls
-      - run: rm -rf ./packaging/dmg/*.dmg
       - run: rm -rf ./node_modules
       - run: npm -v
       - run: npm install
@@ -83,7 +82,6 @@ jobs:
           cache-path: '${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:' # optional, change this to specify the cache path
       # - run: flutter doctor
       - run: ls
-      - run: rm -rf ./packaging/deb/*.deb
       - run: sudo apt-get install clang cmake git ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
       - run: flutter config --enable-linux-desktop
       - run: make build-client-ubuntu-x64 PRJ_NAME=${{ env.PRJ_NAME }} TAG=${{ env.TAG }}

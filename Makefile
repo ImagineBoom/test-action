@@ -37,7 +37,8 @@ build-client-ubuntu-x64: flutter_distributor
 	rm -rf build/linux/
 	mkdir -p ./linux/packaging/deb/
 	mkdir -p ./dist/$(TAG)
-	cp ./packaging/deb/make_config.yaml ./linux/packaging/deb/
+	rm -rf  ./dist/$(TAG)/*.deb
+	cp ./packaging/deb/make_config.yaml ./linux/packaging/deb
 	source ~/.bashrc; \
 	flutter_distributor package --platform linux --targets deb --no-skip-clean --artifact-name=$(PRJ_NAME)-$(TAG)-x64.deb
 
@@ -46,6 +47,7 @@ build-client-macOS-x64:
 	rm -rf build/macos/
 	flutter build macos
 	mkdir -p ./dist/$(TAG)
+	rm -rf  ./dist/$(TAG)/*.dmg
 	npx appdmg ./packaging/dmg/config.json ./dist/$(TAG)/$(PRJ_NAME)-$(TAG)-x64.dmg
 
 # 编译到 windows
