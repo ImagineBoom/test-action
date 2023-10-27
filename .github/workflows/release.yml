@@ -30,10 +30,14 @@ jobs:
   publish_flutter_arm64_macos:
     needs: release-please
     if: ${{ needs.release-please.outputs.tag }}
+    env:
+      TAG: ${{ needs.release-please.outputs.tag }}
+      PRJ_NAME: "BoxInspector"
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
+      - id: flutter-action
+        uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
           # flutter-version: ${{ env.flutter_version }}
@@ -47,7 +51,15 @@ jobs:
       - run: npm install
       - run: flutter config --enable-macos-desktop
       - run: npm install
-      - run: make build-client-macOS TAG=${{ needs.release-please.outputs.tag }}
+      - run: make build-client-macOS-x64 PRJ_NAME=${{ env.PRJ_NAME }} TAG=${{ env.TAG }}
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release upload ${{ needs.release-please.outputs.tag }} ./packaging/dmg/*.dmg
+        run:
+          gh release upload ${{ env.TAG }} ./packaging/dmg/${{ env.PRJ_NAME }}-${{ env.TAG }}-x64.dmg
+      - run: |
+          echo CACHE-PATH=${{ steps.flutter-action.outputs.CACHE-PATH }}
+          echo CACHE-KEY=${{ steps.flutter-action.outputs.CACHE-KEY }}
+          echo CHANNEL=${{ steps.flutter-action.outputs.CHANNEL }}
+          echo VERSION=${{ steps.flutter-action.outputs.VERSION }}
+          echo ARCHITECTURE=${{ steps.flutter-action.outputs.ARCHITECTURE }}
+        shell: bash
