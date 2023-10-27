@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.0](https://github.com/ImagineBoom/test-action/compare/v1.16.0...v1.17.0) (2023-10-27)
+
+
+### Features
+
+* ate release.yml ([8239149](https://github.com/ImagineBoom/test-action/commit/8239149716b86267cd435015b2caa1762c41e5bc))
+
 ## [1.16.0](https://github.com/ImagineBoom/test-action/compare/v1.15.0...v1.16.0) (2023-10-27)
 
 
