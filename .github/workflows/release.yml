@@ -27,7 +27,7 @@ jobs:
           package-name: release-please-action
       - if: ${{ steps.release.outputs.release_created }}
         run: echo tag=${{ steps.release.outputs.tag_name }}
-  publish_flutter_arm64_macos:
+  publish_flutter_x64_macos:
     needs: release-please
     if: ${{ needs.release-please.outputs.tag }}
     env:
@@ -46,6 +46,7 @@ jobs:
           cache-path: '${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:' # optional, change this to specify the cache path
       # - run: flutter doctor
       - run: ls
+      - run: ls ./packaging/dmg/
       - run: rm -rf ./node_modules
       - run: npm -v
       - run: npm install
@@ -63,3 +64,12 @@ jobs:
           echo VERSION=${{ steps.flutter-action.outputs.VERSION }}
           echo ARCHITECTURE=${{ steps.flutter-action.outputs.ARCHITECTURE }}
         shell: bash
+  publish_flutter_x64_ubuntu:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.tag }}
+    env:
+      TAG: ${{ needs.release-please.outputs.tag }}
+      PRJ_NAME: "BoxInspector"
+    runs-on: ubuntu-latest
+    steps:
+      - run: ls
