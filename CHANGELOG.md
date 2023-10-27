@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.21.0](https://github.com/ImagineBoom/test-action/compare/v1.20.0...v1.21.0) (2023-10-27)
+
+
+### Features
+
+* gd ([caf6705](https://github.com/ImagineBoom/test-action/commit/caf6705b842d8835a37b170ccd383a212b112b72))
+
 ## [1.20.0](https://github.com/ImagineBoom/test-action/compare/v1.19.0...v1.20.0) (2023-10-27)
 
 
