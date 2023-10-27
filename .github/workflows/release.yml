@@ -13,8 +13,6 @@ permissions:
 # env:
 #   flutter_version: '3.13.6'
 
-
-
 jobs:
   release-please:
     name: version-changelog
@@ -46,9 +44,10 @@ jobs:
       - run: ls
       - run: rm -rf ./node_modules
       - run: npm -v
-      - run: npx -v
       - run: npm install
       - run: flutter config --enable-macos-desktop
       - run: npm install
-      - run: make build-client-macOS
-      - run: gh release upload ${{ needs.release-please.outputs.tag }} ./packaging/dmg/untitled2_arm64.dmg TAG=${{ needs.release-please.outputs.tag }}
+      - run: make build-client-macOS TAG=${{ needs.release-please.outputs.tag }}
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload ${{ needs.release-please.outputs.tag }} ./packaging/dmg/*.dmg
