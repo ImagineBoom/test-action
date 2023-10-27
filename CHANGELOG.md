@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0](https://github.com/ImagineBoom/test-action/compare/v1.4.0...v1.5.0) (2023-10-27)
+
+
+### Features
+
+* node ([5fd4b89](https://github.com/ImagineBoom/test-action/commit/5fd4b8995842c010a2ac4dab7785487ca0e695f0))
+* update2 ([f50f0fa](https://github.com/ImagineBoom/test-action/commit/f50f0fa8fe08b7065ce186f0e8df9ed6a2821820))
+
 ## [1.4.0](https://www.github.com/ImagineBoom/test-action/compare/v1.3.0...v1.4.0) (2023-10-27)
 
 
