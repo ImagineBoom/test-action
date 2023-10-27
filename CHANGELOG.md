@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.0](https://github.com/ImagineBoom/test-action/compare/v1.14.0...v1.15.0) (2023-10-27)
+
+
+### Features
+
+* pdate release.yml ([6510d9f](https://github.com/ImagineBoom/test-action/commit/6510d9f969323d90d0bfd2be22744a0f5e4f1fe8))
+
 ## [1.14.0](https://github.com/ImagineBoom/test-action/compare/v1.13.0...v1.14.0) (2023-10-27)
 
 
