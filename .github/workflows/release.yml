@@ -18,14 +18,14 @@ jobs:
     name: version-changelog
     runs-on: ubuntu-latest
     outputs:
-        tag: ${{ steps.release.outputs.tag_name }}
+      tag: ${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}
     steps:
       - id: release
         uses: google-github-actions/release-please-action@v3
         with:
           release-type: dart
           package-name: release-please-action
-          include-v-in-tag: false
+          include-v-in-tag: true
       - if: ${{ steps.release.outputs.release_created }}
         run: echo tag=${{ steps.release.outputs.tag_name }}
 
