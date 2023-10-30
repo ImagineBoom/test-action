@@ -348,7 +348,7 @@ packages:
     source: hosted
     version: "1.9.1"
   msix:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: msix
       sha256: "6e76e2491d5c809d784ce2b68e6c3426097fb5c68e61fe121c8c3341ab89bf46"

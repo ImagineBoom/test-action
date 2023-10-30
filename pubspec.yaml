@@ -47,6 +47,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  msix: ^3.16.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -89,3 +90,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+msix_config:
+  display_name: test_action
+  publisher_display_name: "Company Name"
+  msix_version: 1.32.0
+  logo_path: assets/images/box-icon2/icon.iconset/icon_512x512@2x.png
+  capabilities: inspect
