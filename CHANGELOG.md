@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.31.0](https://github.com/ImagineBoom/test-action/compare/1.30.0...v1.31.0) (2023-10-30)
+
+
+### Features
+
+* t2 ([ac8eb99](https://github.com/ImagineBoom/test-action/commit/ac8eb9973d700b458a146dc678d1ca70b3da8827))
+
 ## [1.30.0](https://github.com/ImagineBoom/test-action/compare/1.29.0...1.30.0) (2023-10-30)
 
 
