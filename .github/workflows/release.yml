@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       tag: ${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}
+      release_created: false
     steps:
       - id: release
         uses: google-github-actions/release-please-action@v3
@@ -27,11 +28,13 @@ jobs:
           package-name: release-please-action
           include-v-in-tag: true
       - if: ${{ steps.release.outputs.release_created }}
-        run: echo tag=${{ steps.release.outputs.tag_name }}
+        run:
+          echo tag=${{ steps.release.outputs.tag_name }}
+          release_created=${{ steps.release.outputs.release_created }}
 
   publish_flutter_x64_macos:
     needs: release-please
-    if: ${{ needs.release-please.outputs.tag }}
+    if: ${{ needs.release-please.outputs.release_created }}
     env:
       TAG: ${{ needs.release-please.outputs.tag }}
       PRJ_NAME: "BoxInspector"
@@ -68,7 +71,7 @@ jobs:
 
   publish_flutter_x64_ubuntu:
     needs: release-please
-    if: ${{ needs.release-please.outputs.tag }}
+    if: ${{ needs.release-please.outputs.release_created }}
     env:
       TAG: ${{ needs.release-please.outputs.tag }}
       PRJ_NAME: "BoxInspector"
