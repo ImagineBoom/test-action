@@ -27,6 +27,7 @@ jobs:
           package-name: release-please-action
       - if: ${{ steps.release.outputs.release_created }}
         run: echo tag=${{ steps.release.outputs.tag_name }}
+
   publish_flutter_x64_macos:
     needs: release-please
     if: ${{ needs.release-please.outputs.tag }}
@@ -63,6 +64,7 @@ jobs:
           echo VERSION=${{ steps.flutter-action.outputs.VERSION }}
           echo ARCHITECTURE=${{ steps.flutter-action.outputs.ARCHITECTURE }}
         shell: bash
+
   publish_flutter_x64_ubuntu:
     needs: release-please
     if: ${{ needs.release-please.outputs.tag }}
