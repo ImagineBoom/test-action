@@ -29,9 +29,10 @@ jobs:
           include-v-in-tag: true
       - if: ${{ steps.release.outputs.release_created }}
         run:
-          echo tag=${{ steps.release.outputs.tag_name }}
-          release_created=${{ steps.release.outputs.release_created }}
-
+          print(tag=${{ steps.release.outputs.tag_name }})
+          if(tag!='..')
+            release_created=true
+        shell: python
   publish_flutter_x64_macos:
     needs: release-please
     if: ${{ needs.release-please.outputs.release_created }}
