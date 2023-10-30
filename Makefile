@@ -41,6 +41,7 @@ build-client-ubuntu-x64: flutter_distributor
 	cp ./packaging/deb/make_config.yaml ./linux/packaging/deb
 	source ~/.bashrc; \
 	flutter_distributor package --platform linux --targets deb --no-skip-clean --artifact-name=$(PRJ_NAME)-$(TAG)-x64.deb
+	ls ./dist/$(TAG)/
 
 # 编译到 macOS
 build-client-macOS-x64:
@@ -49,10 +50,12 @@ build-client-macOS-x64:
 	mkdir -p ./dist/$(TAG)
 	rm -rf  ./dist/$(TAG)/*.dmg
 	npx appdmg ./packaging/dmg/config.json ./dist/$(TAG)/$(PRJ_NAME)-$(TAG)-x64.dmg
+	ls ./dist/$(TAG)/
 
 # 编译到 windows
 build-client-windows-amd64:
-	@ - make clean-client
+	rm -rf build/windows/
+	flutter build windows
 	./packaging/exe/InnoSteupScript.iss
 
 build-client-windows-arm64: build-client-windows-amd64
