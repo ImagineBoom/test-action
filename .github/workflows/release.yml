@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       tag: ${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}
-      release_created: false
+      release_created: ${{ steps.release.outputs.release_created }}
     steps:
       - id: release
         uses: google-github-actions/release-please-action@v3
@@ -30,8 +30,6 @@ jobs:
       - if: ${{ steps.release.outputs.release_created }}
         run:
           print(tag=${{ steps.release.outputs.tag_name }})
-          if(tag!='..')
-            release_created=true
         shell: python
   publish_flutter_x64_macos:
     needs: release-please
