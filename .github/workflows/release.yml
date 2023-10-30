@@ -57,7 +57,7 @@ jobs:
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run:
-          gh release upload v${{ env.TAG }} ./dist/${{ env.TAG }}/${{ env.PRJ_NAME }}-${{ env.TAG }}-x64.dmg
+          gh release upload v${{ env.TAG }} ./dist/${{ env.TAG }}/${{ env.PRJ_NAME }}-${{ env.TAG }}-x64.dmg --clobber
       - run: |
           echo CACHE-PATH=${{ steps.flutter-action.outputs.CACHE-PATH }}
           echo CACHE-KEY=${{ steps.flutter-action.outputs.CACHE-KEY }}
@@ -91,7 +91,7 @@ jobs:
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run:
-          gh release upload v${{ env.TAG }} ./dist/${{ env.TAG }}/${{ env.PRJ_NAME }}-${{ env.TAG }}-x64.deb
+          gh release upload v${{ env.TAG }} ./dist/${{ env.TAG }}/${{ env.PRJ_NAME }}-${{ env.TAG }}-x64.deb --clobber
       - run: |
           echo CACHE-PATH=${{ steps.flutter-action.outputs.CACHE-PATH }}
           echo CACHE-KEY=${{ steps.flutter-action.outputs.CACHE-KEY }}
