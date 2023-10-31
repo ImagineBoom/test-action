@@ -129,20 +129,20 @@ jobs:
         shell: bash
       - run: flutter create --platform=windows .
         shell: bash
-      - run: cp ../../assets/images/box-icon2/icon.iconset/box-icon2.ico ../../windows/runner/resources/app_icon.ico
+      - run: cp assets/images/box-icon2/icon.iconset/box-icon2.ico windows/runner/resources/app_icon.ico
         shell: bash
       - run: flutter build windows
         shell: bash
       - name: Inno Setup use Action
         uses: ImagineBoom/Inno-Setup-Action@v1.0.0
         with:
-          path: ../../packaging/exe/InnoSteupScript.iss
+          path: packaging/exe/InnoSteupScript.iss
           options: -<
-            /DMyAppName=${{ env.PRJ_NAME }} /DMyAppExeName="${{ env.PRJ_NAME }}-${{ env.TAG }}-x64.exe" /DMyAppVersion=${{ env.TAG }} /DDepDir="..\..\build\windows\runner\Release" /Qp /O"dist\${{ env.TAG }}" /F"${{ env.PRJ_NAME }}" /Sbyparam=$p "..\..\packaging\exe\InnoSteupScript.iss"
+            /DMyAppName=${{ env.PRJ_NAME }} /DMyAppExeName="${{ env.PRJ_NAME }}-${{ env.TAG }}-x64.exe" /DMyAppVersion=${{ env.TAG }} /DDepDir="build\windows\runner\Release" /Qp /O"dist\${{ env.TAG }}" /F"${{ env.PRJ_NAME }}" /Sbyparam=$p "packaging\exe\InnoSteupScript.iss"
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run:
-          gh release upload v${{ env.TAG }} ./dist/${{ env.TAG }}/${{ env.PRJ_NAME }}-${{ env.TAG }}-x64.exe
+          gh release upload v${{ env.TAG }} dist/${{ env.TAG }}/${{ env.PRJ_NAME }}-${{ env.TAG }}-x64.exe
         shell: bash
       - run: |
           echo CACHE-PATH=${{ steps.flutter-action.outputs.CACHE-PATH }}
