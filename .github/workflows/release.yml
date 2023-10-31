@@ -123,7 +123,7 @@ jobs:
       # - run: flutter doctor
       - run: sudo apt-get install clang cmake git ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
       - run: flutter config --enable-windows-desktop
-      - uses: pwall2222/inno-setup-download
+      - uses: pwall2222/inno-setup-download@v0.0.4
       - run: rm -rf build/windows/
       - run: rm -rf windows/
       - run: flutter create --platform=windows .
