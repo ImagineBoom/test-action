@@ -139,7 +139,7 @@ jobs:
         uses: ImagineBoom/Inno-Setup-Action@v1.0.0
         with:
           path: packaging/exe/InnoSteupScript.iss
-          options: /DMyAppName=${{ env.PRJ_NAME }}-${{ env.TAG }}-x64.exe /DMyAppExeName="${{ env.PRJ_NAME }}.exe" /DMyAppVersion=${{ env.TAG }} /DDepDir="${{ github.workspace }}\build\windows\runner\Release" /Qp /O"dist\${{ env.TAG }}" /F"${{ env.PRJ_NAME }}" /Sbyparam=$p
+          options: /DMyAppName=${{ env.PRJ_NAME }} /DMyAppExeName="${{ env.PRJ_NAME }}.exe" /DMyAppVersion=${{ env.TAG }} /DDepDir="${{ github.workspace }}\build\windows\runner\Release" /Qp /O"dist\${{ env.TAG }}" /F"${{ env.PRJ_NAME }}-${{ env.TAG }}-x64" /Sbyparam=$p
       - run: ls
         shell: bash
       - run: ls dist
