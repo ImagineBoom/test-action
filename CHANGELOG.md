@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.36.0](https://github.com/ImagineBoom/test_action/compare/v1.35.0...v1.36.0) (2023-10-31)
+
+
+### Features
+
+* build win t6 ([9500f20](https://github.com/ImagineBoom/test_action/commit/9500f2007bb778529ca2bcdf332311bdc87384dc))
+
 ## [1.35.0](https://github.com/ImagineBoom/test_action/compare/v1.34.0...v1.35.0) (2023-10-31)
 
 
