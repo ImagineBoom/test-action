@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.44.0](https://github.com/ImagineBoom/test_action/compare/v1.43.0...v1.44.0) (2023-10-31)
+
+
+### Features
+
+* build w f2 ([d94dd4f](https://github.com/ImagineBoom/test_action/commit/d94dd4f71fe7b80e1417e6eb169552a3874411c9))
+* build win f4 ([1e4b346](https://github.com/ImagineBoom/test_action/commit/1e4b346c68eb8bb8dfa084bdf5a78ab39886dd59))
+* build win f6 ([bf90d1a](https://github.com/ImagineBoom/test_action/commit/bf90d1af1aace00acef8582f3bff0ddffe87c21f))
+
 ## [1.43.0](https://github.com/ImagineBoom/test_action/compare/v1.42.0...v1.43.0) (2023-10-31)
 
 
