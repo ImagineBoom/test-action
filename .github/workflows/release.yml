@@ -138,6 +138,12 @@ jobs:
         with:
           path: packaging/exe/InnoSteupScript.iss
           options: /DMyAppName=${{ env.PRJ_NAME }} /DMyAppExeName="${{ env.PRJ_NAME }}-${{ env.TAG }}-x64.exe" /DMyAppVersion=${{ env.TAG }} /DDepDir="${{ github.workspace }}\build\windows\runner\Release" /Qp /O"dist\${{ env.TAG }}" /F"${{ env.PRJ_NAME }}" /Sbyparam=$p
+      - run: ls
+        shell: bash
+      - run: ls dist
+        shell: bash
+      - run: ls dist/${{ env.TAG }}
+        shell: bash
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run:
