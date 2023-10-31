@@ -31,76 +31,76 @@ jobs:
         run:
           print("tag=${{ steps.release.outputs.tag_name }}")
         shell: python
-  publish_flutter_x64_macos:
-    needs: release-please
-    if: ${{ needs.release-please.outputs.release_created }}
-    env:
-      TAG: ${{ needs.release-please.outputs.tag }}
-      PRJ_NAME: "BoxInspector"
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v4
-      - id: flutter-action
-        uses: subosito/flutter-action@v2
-        with:
-          channel: 'stable'
-          # flutter-version: ${{ env.flutter_version }}
-          # architecture: arm64
-          cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:' # optional, change this to force refresh cache
-          cache-path: '${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:' # optional, change this to specify the cache path
-      # - run: flutter doctor
-      - run: ls
-      - run: rm -rf ./node_modules
-      - run: npm -v
-      - run: npm install
-      - run: flutter config --enable-macos-desktop
-      - run: npm install
-      - run: make build-client-macOS-x64 PRJ_NAME=${{ env.PRJ_NAME }} TAG=${{ env.TAG }}
-      - env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run:
-          gh release upload v${{ env.TAG }} ./dist/${{ env.TAG }}/${{ env.PRJ_NAME }}-${{ env.TAG }}-x64.dmg --clobber
-      - run: |
-          echo CACHE-PATH=${{ steps.flutter-action.outputs.CACHE-PATH }}
-          echo CACHE-KEY=${{ steps.flutter-action.outputs.CACHE-KEY }}
-          echo CHANNEL=${{ steps.flutter-action.outputs.CHANNEL }}
-          echo VERSION=${{ steps.flutter-action.outputs.VERSION }}
-          echo ARCHITECTURE=${{ steps.flutter-action.outputs.ARCHITECTURE }}
-        shell: bash
+  # publish_flutter_x64_macos:
+  #   needs: release-please
+  #   if: ${{ needs.release-please.outputs.release_created }}
+  #   env:
+  #     TAG: ${{ needs.release-please.outputs.tag }}
+  #     PRJ_NAME: "BoxInspector"
+  #   runs-on: macos-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - id: flutter-action
+  #       uses: subosito/flutter-action@v2
+  #       with:
+  #         channel: 'stable'
+  #         # flutter-version: ${{ env.flutter_version }}
+  #         # architecture: arm64
+  #         cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:' # optional, change this to force refresh cache
+  #         cache-path: '${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:' # optional, change this to specify the cache path
+  #     # - run: flutter doctor
+  #     - run: ls
+  #     - run: rm -rf ./node_modules
+  #     - run: npm -v
+  #     - run: npm install
+  #     - run: flutter config --enable-macos-desktop
+  #     - run: npm install
+  #     - run: make build-client-macOS-x64 PRJ_NAME=${{ env.PRJ_NAME }} TAG=${{ env.TAG }}
+  #     - env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       run:
+  #         gh release upload v${{ env.TAG }} ./dist/${{ env.TAG }}/${{ env.PRJ_NAME }}-${{ env.TAG }}-x64.dmg --clobber
+  #     - run: |
+  #         echo CACHE-PATH=${{ steps.flutter-action.outputs.CACHE-PATH }}
+  #         echo CACHE-KEY=${{ steps.flutter-action.outputs.CACHE-KEY }}
+  #         echo CHANNEL=${{ steps.flutter-action.outputs.CHANNEL }}
+  #         echo VERSION=${{ steps.flutter-action.outputs.VERSION }}
+  #         echo ARCHITECTURE=${{ steps.flutter-action.outputs.ARCHITECTURE }}
+  #       shell: bash
 
-  publish_flutter_x64_ubuntu:
-    needs: release-please
-    if: ${{ needs.release-please.outputs.release_created }}
-    env:
-      TAG: ${{ needs.release-please.outputs.tag }}
-      PRJ_NAME: "BoxInspector"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - id: flutter-action
-        uses: subosito/flutter-action@v2
-        with:
-          channel: 'stable'
-          # flutter-version: ${{ env.flutter_version }}
-          # architecture: arm64
-          cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:' # optional, change this to force refresh cache
-          cache-path: '${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:' # optional, change this to specify the cache path
-      # - run: flutter doctor
-      - run: ls
-      - run: sudo apt-get install clang cmake git ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
-      - run: flutter config --enable-linux-desktop
-      - run: make build-client-ubuntu-x64 PRJ_NAME=${{ env.PRJ_NAME }} TAG=${{ env.TAG }}
-      - env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run:
-          gh release upload v${{ env.TAG }} ./dist/${{ env.TAG }}/${{ env.PRJ_NAME }}-${{ env.TAG }}-x64.deb --clobber
-      - run: |
-          echo CACHE-PATH=${{ steps.flutter-action.outputs.CACHE-PATH }}
-          echo CACHE-KEY=${{ steps.flutter-action.outputs.CACHE-KEY }}
-          echo CHANNEL=${{ steps.flutter-action.outputs.CHANNEL }}
-          echo VERSION=${{ steps.flutter-action.outputs.VERSION }}
-          echo ARCHITECTURE=${{ steps.flutter-action.outputs.ARCHITECTURE }}
-        shell: bash
+  # publish_flutter_x64_ubuntu:
+  #   needs: release-please
+  #   if: ${{ needs.release-please.outputs.release_created }}
+  #   env:
+  #     TAG: ${{ needs.release-please.outputs.tag }}
+  #     PRJ_NAME: "BoxInspector"
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - id: flutter-action
+  #       uses: subosito/flutter-action@v2
+  #       with:
+  #         channel: 'stable'
+  #         # flutter-version: ${{ env.flutter_version }}
+  #         # architecture: arm64
+  #         cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:' # optional, change this to force refresh cache
+  #         cache-path: '${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:' # optional, change this to specify the cache path
+  #     # - run: flutter doctor
+  #     - run: ls
+  #     - run: sudo apt-get install clang cmake git ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
+  #     - run: flutter config --enable-linux-desktop
+  #     - run: make build-client-ubuntu-x64 PRJ_NAME=${{ env.PRJ_NAME }} TAG=${{ env.TAG }}
+  #     - env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       run:
+  #         gh release upload v${{ env.TAG }} ./dist/${{ env.TAG }}/${{ env.PRJ_NAME }}-${{ env.TAG }}-x64.deb --clobber
+  #     - run: |
+  #         echo CACHE-PATH=${{ steps.flutter-action.outputs.CACHE-PATH }}
+  #         echo CACHE-KEY=${{ steps.flutter-action.outputs.CACHE-KEY }}
+  #         echo CHANNEL=${{ steps.flutter-action.outputs.CHANNEL }}
+  #         echo VERSION=${{ steps.flutter-action.outputs.VERSION }}
+  #         echo ARCHITECTURE=${{ steps.flutter-action.outputs.ARCHITECTURE }}
+  #       shell: bash
 
   publish_flutter_x64_windows:
     name: publish_flutter_x64_windows
