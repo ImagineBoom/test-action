@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.33.0](https://github.com/ImagineBoom/test-action/compare/v1.32.0...v1.33.0) (2023-10-31)
+
+
+### Features
+
+* build win ([40a0819](https://github.com/ImagineBoom/test-action/commit/40a0819f5a8db7c6fd295c6657c0ff0fc9441d1b))
+* build win ([adfd06b](https://github.com/ImagineBoom/test-action/commit/adfd06b53b9648e57fcbd70b5f3b4adfe00b4343))
+* icon ([0e00277](https://github.com/ImagineBoom/test-action/commit/0e00277b47ad4b1d986022b6515480a4cbee4435))
+* inno setup ok. msix mid ([25b67b8](https://github.com/ImagineBoom/test-action/commit/25b67b859bd2f49d5bdb86bb29f842e216dcac21))
+* msix ([5f81282](https://github.com/ImagineBoom/test-action/commit/5f812824549f144831ca571488ce57f64d6dcfa8))
+* pdate release.yml ([3f9dada](https://github.com/ImagineBoom/test-action/commit/3f9dada7c5ae0bceb93fa23fb2f65bf58f81db2a))
+
 ## [1.32.0](https://github.com/ImagineBoom/test-action/compare/v1.31.0...v1.32.0) (2023-10-30)
 
 
