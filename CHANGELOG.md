@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.42.0](https://github.com/ImagineBoom/test_action/compare/v1.41.0...v1.42.0) (2023-10-31)
+
+
+### Features
+
+* build win t10 ([bd2812a](https://github.com/ImagineBoom/test_action/commit/bd2812ab05568e1ccbca781e518c749fcc645ae1))
+
 ## [1.41.0](https://github.com/ImagineBoom/test_action/compare/v1.40.0...v1.41.0) (2023-10-31)
 
 
