@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.43.0](https://github.com/ImagineBoom/test_action/compare/v1.42.0...v1.43.0) (2023-10-31)
+
+
+### Features
+
+* win build f1 ([a30fa76](https://github.com/ImagineBoom/test_action/commit/a30fa76cfb5b49548693f0c0b6c1e87fe2eff5a4))
+* win build final ([05bb01c](https://github.com/ImagineBoom/test_action/commit/05bb01c8777fd63f10a39fac1333f939615cbee0))
+
 ## [1.42.0](https://github.com/ImagineBoom/test_action/compare/v1.41.0...v1.42.0) (2023-10-31)
 
 
