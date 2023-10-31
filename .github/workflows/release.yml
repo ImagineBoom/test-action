@@ -135,6 +135,8 @@ jobs:
         shell: bash
       - run: rm -rf dist/${{ env.TAG }}/*.exe
         shell: bash
+      - run: echo "workspace=${{ github.workspace }}"
+        shell: bash
       - name: Inno Setup use Action
         uses: ImagineBoom/Inno-Setup-Action@v1.0.0
         with:
