@@ -53,8 +53,9 @@ build-client-macOS-x64:
 	ls ./dist/$(TAG)/
 
 # 编译到 windows
-build-client-windows-amd64:
+build-client-windows-x64:
 	rm -rf build/windows/
+	rm -rf windows/
 	flutter build windows
 	./packaging/exe/InnoSteupScript.iss
 
