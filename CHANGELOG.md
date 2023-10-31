@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.41.0](https://github.com/ImagineBoom/test_action/compare/v1.40.0...v1.41.0) (2023-10-31)
+
+
+### Features
+
+* build win t9 ([e6ebc3a](https://github.com/ImagineBoom/test_action/commit/e6ebc3a3eff7ea028502cd0b9c35043296dac9c2))
+
 ## [1.40.0](https://github.com/ImagineBoom/test_action/compare/v1.39.0...v1.40.0) (2023-10-31)
 
 
