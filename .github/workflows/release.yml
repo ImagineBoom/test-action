@@ -103,7 +103,7 @@ jobs:
         shell: bash
 
   publish_flutter_x64_windows:
-    name: Compile .ISS to .EXE Installer
+    name: publish_flutter_x64_windows
     needs: release-please
     if: ${{ needs.release-please.outputs.release_created  }}
     env:
@@ -121,14 +121,18 @@ jobs:
           cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:' # optional, change this to force refresh cache
           cache-path: '${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:' # optional, change this to specify the cache path
       # - run: flutter doctor
-      - run: sudo apt-get install clang cmake git ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
       - run: flutter config --enable-windows-desktop
       - uses: pwall2222/inno-setup-download@v0.0.4
       - run: rm -rf build/windows/
+        shell: bash
       - run: rm -rf windows/
+        shell: bash
       - run: flutter create --platform=windows .
+        shell: bash
       - run: cp ../../assets/images/box-icon2/icon.iconset/box-icon2.ico ../../windows/runner/resources/app_icon.ico
+        shell: bash
       - run: flutter build windows
+        shell: bash
       - name: Inno Setup use Action
         uses: ImagineBoom/Inno-Setup-Action@v1.0.0
         with:
@@ -139,6 +143,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run:
           gh release upload v${{ env.TAG }} ./dist/${{ env.TAG }}/${{ env.PRJ_NAME }}-${{ env.TAG }}-x64.exe
+        shell: bash
       - run: |
           echo CACHE-PATH=${{ steps.flutter-action.outputs.CACHE-PATH }}
           echo CACHE-KEY=${{ steps.flutter-action.outputs.CACHE-KEY }}
