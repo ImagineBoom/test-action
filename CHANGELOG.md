@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.40.0](https://github.com/ImagineBoom/test_action/compare/v1.39.0...v1.40.0) (2023-10-31)
+
+
+### Features
+
+* build win t8 ([ab59273](https://github.com/ImagineBoom/test_action/commit/ab59273decef4dbcb382e664ccfb80c712de2280))
+
 ## [1.39.0](https://github.com/ImagineBoom/test_action/compare/v1.38.0...v1.39.0) (2023-10-31)
 
 
