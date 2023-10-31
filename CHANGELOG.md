@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.35.0](https://github.com/ImagineBoom/test_action/compare/v1.34.0...v1.35.0) (2023-10-31)
+
+
+### Features
+
+* build win4 ([a72489e](https://github.com/ImagineBoom/test_action/commit/a72489e4681ed8f8aaded384c866d4b728c4588f))
+
 ## [1.34.0](https://github.com/ImagineBoom/test-action/compare/v1.33.0...v1.34.0) (2023-10-31)
 
 
