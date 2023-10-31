@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.45.0](https://github.com/ImagineBoom/test_action/compare/v1.44.0...v1.45.0) (2023-10-31)
+
+
+### Features
+
+* build final ([c6ef4a0](https://github.com/ImagineBoom/test_action/commit/c6ef4a03e64908b2b910a879e2525d49be4c79b2))
+
 ## [1.44.0](https://github.com/ImagineBoom/test_action/compare/v1.43.0...v1.44.0) (2023-10-31)
 
 
