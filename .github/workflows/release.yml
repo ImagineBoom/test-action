@@ -108,7 +108,7 @@ jobs:
     if: ${{ needs.release-please.outputs.release_created  }}
     env:
       TAG: ${{ needs.release-please.outputs.tag }}
-      PRJ_NAME: "BoxInspector"
+      PRJ_NAME: "test_action"
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
