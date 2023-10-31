@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.34.0](https://github.com/ImagineBoom/test-action/compare/v1.33.0...v1.34.0) (2023-10-31)
+
+
+### Features
+
+* build win3 ([fa9a818](https://github.com/ImagineBoom/test-action/commit/fa9a8180bd93246adf3094781eb73b0f57111bf2))
+
 ## [1.33.0](https://github.com/ImagineBoom/test-action/compare/v1.32.0...v1.33.0) (2023-10-31)
 
 
