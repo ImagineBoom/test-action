@@ -144,9 +144,9 @@ jobs:
           options: /DMyAppName=${{ env.PRJ_NAME }} /DMyAppExeName="${{ env.PRJ_NAME }}.exe" /DMyAppVersion=${{ env.TAG }} /DDepDir="${{ github.workspace }}\build\windows\runner\Release" /Qp /O"dist\${{ env.TAG }}" /F"${{ env.PRJ_NAME }}-${{ env.TAG }}-x64" /Sbyparam=$p
       - run: ls
         shell: bash
-      - run: ls dist
-        shell: bash
       - run: ls dist/${{ env.TAG }}
+        shell: bash
+      - run: ls build/windows/runner/Release
         shell: bash
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
